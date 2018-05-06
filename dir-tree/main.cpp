@@ -62,7 +62,7 @@ void print_dir(const char *dir, int depth)
 
     closedir(handler);
 
-    std::for_each(vec.begin(), vec.end(), [&](const char *file) -> void {;
+    std::for_each(vec.begin(), vec.end(), [=](const char *file) -> void {;
         std::ostringstream ss;
         ss << dir << "/" << file;
         print_dir(ss.str().c_str(), depth + 1);

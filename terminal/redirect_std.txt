@@ -1,0 +1,9 @@
+is terminal: 0
+h - help
+o - ok
+q - quit
+you select: h - help
+h - help
+o - ok
+q - quit
+you select: q - quit

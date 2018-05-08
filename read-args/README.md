@@ -8,7 +8,7 @@ make build
 ./main -f ff -l
 ```
 
-# RESULE
+# RESULT
 
 ```
 unkown argument: 118

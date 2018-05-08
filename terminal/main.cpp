@@ -82,7 +82,7 @@ void show_dialog_tty()
         menu_item = menu;
         while(*menu_item) {
             if (*menu_item[0] == o) {
-                fprintf(out, "ou select: %s\n", *menu_item);
+                fprintf(out, "you select: %s\n", *menu_item);
                 break;
             }
             ++menu_item;

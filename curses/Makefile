@@ -5,4 +5,4 @@ main.o: main.cpp
 	g++ -c -std=c++11 main.cpp
 
 clean:
-	rm -rf *.o~
+	rm -rf *.o

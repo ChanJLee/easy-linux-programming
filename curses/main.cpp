@@ -1,7 +1,11 @@
 #include <iostream>
+#include <curses.h>
 
 int main(int argc, char* argv[])
 {
-    std::cout << "hello world" << std::endl;
+    initscr();
+    move(10, 10);
+    printw("%s", "hello world");
+    refresh();
     return 0;
 }

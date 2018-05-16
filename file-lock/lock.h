@@ -5,4 +5,6 @@ extern const char* lock_name;
 
 int lock(); 
 
+void unlock(int fd);
+
 #endif

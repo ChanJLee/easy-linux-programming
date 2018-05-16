@@ -15,7 +15,6 @@ int main(int argc, char* argv[])
     std::cout << "B get lock" << std::endl;
     sleep(5);
     std::cout << "B finished" << std::endl;
-    close(mutex);
-    unlink(lock_name);
+    unlock(mutex);
     return 0;
 }

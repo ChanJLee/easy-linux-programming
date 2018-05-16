@@ -9,14 +9,13 @@ int main(int argc, char* argv[])
     while((mutex = lock()) != -1)
     {
         std::cout << "A wait for lock" << std::endl;
-        sleep(1000);
+        sleep(1);
     }
 
     std::cout << "A get lock" << std::endl;
-    sleep(5000);
+    sleep(5);
     std::cout << "A finished" << std::endl;
-    close(mutex);
-    unlink(lock_name);
+    unlock(mutex);
 
     return 0;
 }

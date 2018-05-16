@@ -16,3 +16,13 @@ void unlock(int fd)
     close(fd);
     unlink(lock_name);
 }
+
+int lock_p()
+{
+    return 0;
+}
+
+void unlock_p(int fd)
+{
+    
+}

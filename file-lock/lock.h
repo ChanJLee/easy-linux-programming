@@ -7,4 +7,8 @@ int lock();
 
 void unlock(int fd);
 
+int lock_p();
+
+void unlock_p(int fd);
+
 #endif

@@ -14,6 +14,18 @@
         "__split_buffer": "cpp",
         "iterator": "cpp",
         "string_view": "cpp",
-        "vector": "cpp"
+        "vector": "cpp",
+        "__locale": "cpp",
+        "ios": "cpp",
+        "bitset": "cpp",
+        "__string": "cpp",
+        "memory": "cpp",
+        "type_traits": "cpp",
+        "cstdlib": "cpp",
+        "locale": "cpp",
+        "__mutex_base": "cpp",
+        "mutex": "cpp",
+        "iostream": "cpp",
+        "ostream": "cpp"
     }
 }

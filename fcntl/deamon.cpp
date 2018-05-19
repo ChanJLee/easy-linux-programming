@@ -43,14 +43,24 @@ void lock(int fd, struct flock *lock, int start, int len, int action)
     std::cout << "deamon fcntl result " << res << std::endl;
     if (res == -1)
     {
-        std::cerr << "deamon get lock failed" << std::endl;
+        std::cerr << "deamon get lock failed"
+                  << " start " << lock->l_start
+                  << " end " << lock->l_len + lock->l_start
+                  << " pid " << lock->l_pid
+                  << " type " << lock->l_type
+                  << " whence " << lock->l_whence << std::endl;
         close(fd);
         return;
     }
 
     if (lock->l_pid != -1)
     {
-        std::cout << "deamon lock failed" << std::endl;
+        std::cout << "deamon lock failed"
+                  << " start " << lock->l_start
+                  << " end " << lock->l_len + lock->l_start
+                  << " pid " << lock->l_pid
+                  << " type " << lock->l_type
+                  << " whence " << lock->l_whence << std::endl;
     }
     else
     {

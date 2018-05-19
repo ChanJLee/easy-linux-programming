@@ -42,22 +42,32 @@ void lock(int fd, struct flock *lock, int start, int len, int action)
     std::cout << "main fcntl result " << res << std::endl;
     if (res == -1)
     {
-        std::cerr << "main get lock failed" << std::endl;
+        std::cerr << "main get lock failed"
+                  << " start " << lock->l_start
+                  << " end " << lock->l_len + lock->l_start
+                  << " pid " << lock->l_pid
+                  << " type " << lock->l_type
+                  << " whence " << lock->l_whence << std::endl;
         close(fd);
         return;
     }
 
     if (lock->l_pid != -1)
     {
-        std::cout << "main lock failed" << std::endl;
+        std::cout << "main lock failed"
+                  << " start " << lock->l_start
+                  << " end " << lock->l_len + lock->l_start
+                  << " pid " << lock->l_pid
+                  << " type " << lock->l_type
+                  << " whence " << lock->l_whence << std::endl;
     }
     else
     {
         std::cout << "main lock success"
-                  << " start " << lock->l_start 
-                  << " end " << lock->l_len + lock->l_start 
-                  << " pid " << lock->l_pid 
-                  << " type " << lock->l_type 
+                  << " start " << lock->l_start
+                  << " end " << lock->l_len + lock->l_start
+                  << " pid " << lock->l_pid
+                  << " type " << lock->l_type
                   << " whence " << lock->l_whence << std::endl;
     }
 }

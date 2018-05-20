@@ -18,7 +18,7 @@ int main(int argc, char *argv[])
     int start = 20;
     struct flock mutex;
     lock(fd, &mutex, 20, segment_size, F_WRLCK);
-    sleep(10);
+    sleep(100);
     close(fd);
     return 0;
 }

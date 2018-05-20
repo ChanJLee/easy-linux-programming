@@ -39,12 +39,11 @@ void lock(int fd, struct flock *lock, int start, int len, int action)
               << " type " << action
               << std::endl;
 
-    int res = fcntl(fd, F_SETLK, lock);
+    int res = fcntl(fd, F_GETLK, lock);
     std::cout << "deamon fcntl result " << res << std::endl;
     if (res == -1)
     {
-        std::cerr << "deamon get lock failed"
-                  << " start " << lock->l_start
+        std::cerr << "deamon get lock failed"  << " start " << lock->l_start
                   << " end " << lock->l_len + lock->l_start
                   << " pid " << lock->l_pid
                   << " type " << lock->l_type

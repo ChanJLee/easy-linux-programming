@@ -5,6 +5,7 @@ ARFLAGS = rcs
 
 build: utils.o str_utils.o
 	$(AR) $(ARFLAGS) utils.a $^
+	mv utils.a $(LOCAL_PATH)/utils.a
 
 utils.o: utils.cpp utils.h
 	$(CC) $(CCFLAGS) -c $<

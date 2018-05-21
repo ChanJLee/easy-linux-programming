@@ -1,11 +1,11 @@
-#include <iostream>
+#include "utils/utils.h"
 
 int main(int argc, char* argv[])
 {
     #ifdef DEBUG
-    std::cout << "debug" << std::endl;
+    echo("debug");
     #else
-    std::cout << "release" << std::endl;
+    echo("release");
     #endif
     return 0;
 }

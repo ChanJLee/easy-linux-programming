@@ -32,6 +32,7 @@ int main(int argc, char *argv[])
     for (; i > 0; --i)
     {
         std::cout << msg << std::endl;
+        sleep(1);
     }
 
     if (id)

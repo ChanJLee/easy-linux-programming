@@ -19,9 +19,7 @@ int main(int argc, char *argv[])
         std::cerr << "fork failed" << std::endl;
         return -2;
     case 0:
-        std::cout << "child";
-        close(1);
-        close(fd[1]);
+        std::cout << "child" << std::endl;
         int len;
         char buf[17];
         while ((len = read(fd[0], buf, 16)) > 0)
@@ -32,12 +30,13 @@ int main(int argc, char *argv[])
         std::cout << "end";
         break;
     default:
-        close(fd[0]);
+        std::cout << "parent" << std::endl;
         while (true)
         {
             std::cout << "input your message: ";
             std::string str;
             std::cin >> str;
+            std::cout << std::endl;
 
             if (str == "exit")
             {
@@ -46,7 +45,7 @@ int main(int argc, char *argv[])
             }
             write(fd[1], str.c_str(), str.size());
         }
-    
+
         close(fd[1]);
         break;
     }

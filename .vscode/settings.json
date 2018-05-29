@@ -26,6 +26,7 @@
         "__mutex_base": "cpp",
         "mutex": "cpp",
         "iostream": "cpp",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "utility": "cpp"
     }
 }

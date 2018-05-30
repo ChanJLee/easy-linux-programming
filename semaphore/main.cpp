@@ -24,17 +24,16 @@ int main(int argc, char *argv[])
         return -1;
     }
 
-    sleep(5);
     sem_post(sem);
-    void *ret_data;
-    code = pthread_join(t, &ret_data);
+    char *ret_data;
+    code = pthread_join(t, (void**) &ret_data);
     if (code != 0)
     {
         std::cerr << "join failed" << std::endl;
         return -2;
     }
 
-    std::cout << "result: " << (char *)ret_data << std::endl;
+    std::cout << "result: " << ret_data << std::endl;
     sem_close(sem);
 
     return 0;
@@ -44,7 +43,5 @@ void *thread_func(void *data)
 {
     std::cout << "wait code: " << sem_wait(sem) << std::endl;
     std::cout << "sub thread is running, receive msg: " << (char *)data << std::endl;
-    const char *response = "WTF";
-    memcpy(msg, response, sizeof(response));
-    pthread_exit(msg);
+    pthread_exit(data);
 }

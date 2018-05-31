@@ -9,6 +9,9 @@ pthread_mutex_t mutex;
 
 int main(int argc, char *argv[])
 {
+    pthread_attr_t attr;
+    pthread_attr_init(&attr);
+    
     std::cout << "mutex init: "
               << pthread_mutex_init(&mutex, NULL)
               << std::endl

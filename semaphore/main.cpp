@@ -33,7 +33,7 @@ int main(int argc, char *argv[])
         return -2;
     }
 
-    std::cout << "result: " << ret_data << std::endl;
+    std::cout << "result: " << (char *) ret_data << std::endl;
     sem_close(sem);
 
     return 0;

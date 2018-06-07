@@ -64,7 +64,7 @@ int sem_v()
 {
     struct sembuf buf;
     buf.sem_num = 0;
-    buf.sem_op = 1; /* P() */
+    buf.sem_op = 1; /* V() */
     buf.sem_flg = SEM_UNDO;
     return semop(sem, &buf, 1) == -1 ? -1 : 0;
 }
